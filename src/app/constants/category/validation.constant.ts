@@ -7,6 +7,6 @@ export const isAlphaLanguage: Record<keyof typeof SupportLanguageEnum, RegExp> =
 
 export const maxStringLength = 50
 
-export const sortRegExp = /^[A-Za-z-][A-Za-z]{0,50}$/
+export const sortRegExp = /^(-?[A-Za-z])([A-Za-z]{0,50})$/
 
 export const uuidV4 = 4

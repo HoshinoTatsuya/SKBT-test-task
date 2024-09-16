@@ -125,12 +125,12 @@ export class CategoryRepository implements ICategoryRepository {
       if (data.search) {
         queryBuilderCategory.andWhere(
           `((
-            TRANSLATE(LOWER(${fields.name}), 'ё', 'е') LIKE TRANSLATE(LOWER(:name), 'ё', 'е')
+            TRANSLATE(LOWER(${fields.name}), 'ё', 'е') LIKE TRANSLATE(LOWER(:nameSearch), 'ё', 'е')
           ) OR (
-            TRANSLATE(LOWER(${fields.description}), 'ё', 'е') LIKE TRANSLATE(LOWER(:description), 'ё', 'е')
+            TRANSLATE(LOWER(${fields.description}), 'ё', 'е') LIKE TRANSLATE(LOWER(:descriptionSearch), 'ё', 'е')
           ))`,
 
-          { name: `%${data.name}%`, description: `%${data.description}%` },
+          { nameSearch: `%${data.search}%`, descriptionSearch: `%${data.search}%` },
         )
       }
 
@@ -148,7 +148,7 @@ export class CategoryRepository implements ICategoryRepository {
         )
       }
 
-      if (data.active) {
+      if (data.active !== undefined) {
         queryBuilderCategory.andWhere(`${fields.active} = :active`, { active: data.active })
       }
 
