@@ -198,16 +198,11 @@ export class CategoryRepository implements ICategoryRepository {
     let sortField = fields.createdDate
     let sortMethod = SortEnum.DESC
 
-    if (sort) {
-      if (sort.startsWith('-')) {
-        sortMethod = SortEnum.DESC
-        sort = sort.replace('-', '')
-      } else {
-        sortMethod = SortEnum.ASC
-      }
-
-      if (Object.keys(fields).indexOf(sort) !== -1) {
-        sortField = fields[sort]
+    if (sort && sort?.length > 0) {
+      const pickedFieldSortIsExist = Object.keys(fields).indexOf(sort.replace('-', '')) !== -1
+      if (pickedFieldSortIsExist) {
+        sortMethod = sort.startsWith('-') && sort.replace('-', '').length > 0 ? SortEnum.DESC : SortEnum.ASC
+        sortField = fields[sort.replace('-', '')]
       }
     }
 

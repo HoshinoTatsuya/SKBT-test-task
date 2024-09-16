@@ -9,6 +9,10 @@ export function SortCustomDecorator(sortRegExp: RegExp, validationOptions?: Vali
       options: validationOptions,
       validator: {
         validate(value: string, args: ValidationArguments) {
+          if (value.trim().length === 0) {
+            return true
+          }
+
           return sortRegExp.test(value)
         },
       },

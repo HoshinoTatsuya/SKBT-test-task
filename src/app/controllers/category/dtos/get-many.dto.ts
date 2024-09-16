@@ -28,6 +28,7 @@ import { SupportLanguageEnum } from '../../../enums/support-language.enum'
 export class GetManyDto extends PaginationDto {
   @SortCustomDecorator(sortRegExp)
   @IsString()
+  @Transform((params) => params.value.trim())
   @IsOptional()
   @ApiProperty({
     description: sortDescription,

@@ -14,6 +14,10 @@ export function IsAlphaWithMultipleLocalesDecorator(
       constraints: [supportLanguages.join(', ')],
       validator: {
         validate(value: string, args: ValidationArguments) {
+          if(value.trim().length === 0) {
+            return true
+          }
+
           return locales.some((locale) => locale.test(value))
         },
       },
