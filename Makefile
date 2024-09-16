@@ -6,10 +6,6 @@ all: help
 
 help:
 	@echo "help                  			# this help"
-	@echo "build                 			# build prod images"
-	@echo "start                 			# build and start prod images"
-	@echo "start-from-scratch    			# start prod images with clean database"
-	@echo "stop                  			# stop prod containers purge network"
 	@echo "dev                   			# run all developers containers in background"
 	@echo "dev-stop              			# stop all developers containers"
 	@echo "dev-clear             			# stop all developers containers and clear all unusable data"
