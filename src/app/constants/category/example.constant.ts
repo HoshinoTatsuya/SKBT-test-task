@@ -1,0 +1,5 @@
+export const categoryNameExample = 'Огурцы'
+export const categorySlugExample = 'Cucumbers'
+export const categoryDescriptionExample = 'Это описание категории'
+export const searchExample = 'Мёд'
+export const sortExample = '-updatedDate'

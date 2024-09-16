@@ -1,0 +1,4 @@
+export enum CategoryExceptionEnum {
+  SLUG_ALREADY_EXIST = 'SLUG_ALREADY_EXIST',
+  CATEGORY_IS_NOT_FOUND = 'CATEGORY_IS_NOT_FOUND',
+}

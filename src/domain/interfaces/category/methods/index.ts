@@ -1,0 +1,5 @@
+export * from './create-category.interface'
+export * from './delete.interface'
+export * from './get-many.interface'
+export * from './get-one.interface'
+export * from './partial-update.interface'
